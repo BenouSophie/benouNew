@@ -1,0 +1,273 @@
+<!DOCTYPE html />
+<html>
+<head>
+	<title>jqCoolGallery: Usage</title>
+	
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	
+	<meta name="copyright" content="(c)Copyright 2011-2012, Redtopia, LLC. All rights reserved.">
+	<meta name='description' content='An easy to use, open-source jQuery plugin that displays really cool slideshows and photo galleries.'>
+	<meta name='keywords' content='jquery, plugin, image, slideshow, slide show, gallery, image gallery, photo, photo gallery, ajax, easy, easy to use, simple'>
+	
+	<script type='text/javascript' src='js/jquery-1.7.2.min.js'></script>
+
+	<link type="text/css" href="css/styles.css" rel="stylesheet">
+	
+	<style>
+	.alt-row {background-color:#222;}
+	</style>
+	
+	<script type="text/javascript">
+	$(document).ready (function () {
+		$('#options-table tr:even').addClass ('alt-row'); 
+	});
+	</script>
+</head>
+<body>
+<div id="container">
+	
+	<div id="header">
+		<div id="header-desc">
+			<div id="logo">jqCoolGallery <a href="versions.html" title="Version Information"><span>Current Version: 1.8.0</span></a></div>
+			<div id="tagline">An Open-Source jQuery Plugin That Displays Photo Galleries And Slideshows</div>
+		</div>
+		<div id="header-donate">
+			<!-- begin paypal -->
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="659X7Q4PA5RSL">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+			<!-- end paypal -->
+		</div>
+		<div id="header-menu">
+			<div id="header-menu-items">
+				<ul id="nav">
+					<li><a href="http://www.jqcoolgallery.com" target="_blank">Home</a></li>
+					<li><a href="index.html">Demo</a></li>
+					<li><strong>Usage</strong></li>
+					<li><a href="license.html">License</a></li>
+					<li><a href="support.html">Support</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div id="page">
+		
+		<h1>Usage</h1>
+		
+		<h2>Step 1: Add Required Elements to the HEAD Element of Your Document</h2>
+		<p>Include the jQuery and jqCoolGallery codebases as well as the jQuery 
+		$(document).ready() function where you'll invoke the plugin:</p>
+		
+<pre style='color:#d1d1d1;background:#000000;'><span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>head</span><span style='color:#ff8906; '>></span>
+    
+    <span style='color:#9999a9; '>&lt;!--</span><span style='color:#9999a9; '> include jquery </span><span style='color:#9999a9; '>--></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>script</span> type<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>'</span><span style='color:#00c4c4; '>text/javascript</span><span style='color:#00c4c4; '>'</span> src<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>'</span><span style='color:#00c4c4; '>http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js</span><span style='color:#00c4c4; '>'</span><span style='color:#ff8906; '>></span><span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>script</span><span style='color:#fb8400; '>></span>
+    
+    <span style='color:#9999a9; '>&lt;!--</span><span style='color:#9999a9; '> include jqcoolgallery </span><span style='color:#9999a9; '>--></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>script</span> type<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>'</span><span style='color:#00c4c4; '>text/javascript</span><span style='color:#00c4c4; '>'</span> src<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>'</span><span style='color:#00c4c4; '>jqcoolgallery/jquery.jqcoolgallery.1.8.js</span><span style='color:#00c4c4; '>'</span><span style='color:#ff8906; '>></span><span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>script</span><span style='color:#fb8400; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>link</span> type<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>text/css</span><span style='color:#00c4c4; '>"</span> href<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>jqcoolgallery/jquery.jqcoolgallery.1.8.css</span><span style='color:#00c4c4; '>"</span> rel<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>stylesheet</span><span style='color:#00c4c4; '>"</span> <span style='color:#ff8906; '>/></span>
+    
+    <span style='color:#9999a9; '>&lt;!--</span><span style='color:#9999a9; '> invoke the jqCoolGallery plugin inside $(document).ready() </span><span style='color:#9999a9; '>--></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>script</span> type<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>text/javascript</span><span style='color:#00c4c4; '>"</span><span style='color:#ff8906; '>></span>
+    $(document).ready (function () {
+        $('#gallery').jqCoolGallery ({}); // see below for the available options
+    });
+    <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>script</span><span style='color:#fb8400; '>></span>
+
+    <span style='color:#9999a9; '>&lt;!--</span><span style='color:#9999a9; '> add whatever else you need in your document head </span><span style='color:#9999a9; '>--></span>
+    
+<span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>head</span><span style='color:#fb8400; '>></span>
+</pre>
+	
+	<h2>Step 2: Available Options</h2>
+	<p>The following listing shows the available options for the plugin:</p>
+	
+	<table id="options-table" border="0" cellpadding="4" cellspacing="0" align="left">
+	
+	<tr><td align="left" valign="top">galleryTileWidth</td><td align="left" valign="top">integer: width of gallery tiles, default: 200</td></tr>
+	<tr><td align="left" valign="top">galleryTileHeight</td><td align="left" valign="top">integer: height of gallery tiles, default: 200</td></tr>
+	<tr><td align="left" valign="top">galleryColumnCount</td><td align="left" valign="top">integer: adds the "jqcg-gallery-item-last" class to the last item in each row - used to eliminate right margin, default: -1</td></tr>
+	<tr><td align="left" valign="top">galleryHoverCaption</td><td align="left" valign="top">boolean: whether or not to show/hide a gallery captions when hovering, default: true</td></tr>
+	<tr><td align="left" valign="top">galleryHoverExpand</td><td align="left" valign="top">boolean: whether or not to expand gallery items when hovering, default: true</td></tr>
+	<tr><td align="left" valign="top">galleryHoverExpandPx</td><td align="left" valign="top">integer: number of pixels to expand gallery items (when galleryHoverExpand is true), default: 5</td></tr>
+	<tr><td align="left" valign="top">galleryTitleElement</td><td align="left" valign="top">string: HTML element used to display gallery title in panel, default: 'h3'</td></tr>
+	<tr><td align="left" valign="top">galleryDescElement</td><td align="left" valign="top">string: HTML element used to display gallery description in panel, default: 'p'</td></tr>
+	<tr><td align="left" valign="top">openGallery</td><td align="left" valign="top">integer: 0 based index of gallery to open on initial view, default: -1</td></tr>
+	<tr><td align="left" valign="top">playSpeed</td><td align="left" valign="top">integer: milliseconds delay between slides when playing, default: 3000</td></tr>
+	<tr><td align="left" valign="top">animateInSpeed</td><td align="left" valign="top">ingeger: milliseconds to animate gallery tiles IN, default: 200</td></tr>
+	<tr><td align="left" valign="top">animateOutSpeed</td><td align="left" valign="top">ingeger: milliseconds to animate gallery tiles OUT, default: 200</td></tr>
+	<tr><td align="left" valign="top">initialFadeSpeed</td><td align="left" valign="top">integer: milliseconds to fade in gallery after loading, default: 2000</td></tr>
+	<tr><td align="left" valign="top">loopGalleries</td><td align="left" valign="top">boolean: true to auto-load next gallery after playing last slide in current gallery, default: false</td></tr>
+	<tr><td align="left" valign="top">imageAreaWidth</td><td align="left" valign="top">integer: width of the image area, default: -1</td></tr>
+	<tr><td align="left" valign="top">imageAreaHeight</td><td align="left" valign="top">integer: height of the image area, default: -1</td></tr>
+	<tr><td align="left" valign="top">imageAreaAlign</td><td align="left" valign="top">string: CSS alignment of image area - 'center' or 'left' or 'right', default: 'center'</td></tr>
+	<tr><td align="left" valign="top">imageAreaPadding</td><td align="left" valign="top">string: CSS padding - '0' or '0 10px 0 0' or any other padding CSS to apply to image area, default: '0'</td></tr>
+	<tr><td align="left" valign="top">panelAreaWidth</td><td align="left" valign="top">integer: width of panel area, -1: don't apply width, default: -1</td></tr>
+	<tr><td align="left" valign="top">thumbLocation</td><td align="left" valign="top">string: 'left' or 'right' or 'top' or 'bottom', default: 'bottom'</td></tr>
+	<tr><td align="left" valign="top">thumbStyle</td><td align="left" valign="top">string: 'list' or 'grid', default: 'list'</td></tr>
+	<tr><td align="left" valign="top">thumbAreaWidth</td><td align="left" valign="top">integer: only used for grid style, -1: use panelAreaWidth, default: -1</td></tr>
+	<tr><td align="left" valign="top">thumbHelper</td><td align="left" valign="top">boolean: true to show a larger thumbnail (thumbnail helper) next to a thumbnail, default: true</td></tr>
+	<tr><td align="left" valign="top">thumbHelperMaxWidth</td><td align="left" valign="top">integer: max width of thumbnail helper, default: 100</td></tr>
+	<tr><td align="left" valign="top">thumbHelperMaxHeight</td><td align="left" valign="top">integer: max height of thumbnail helper, default: 100</td></tr>
+	<tr><td align="left" valign="top">thumbWidth</td><td align="left" valign="top">integer: width of a thumbnail container, default: 100</td></tr>
+	<tr><td align="left" valign="top">thumbHeight</td><td align="left" valign="top">integer: height of a thumbnail container, default: 100</td></tr>
+	<tr><td align="left" valign="top">thumbPadding</td><td align="left" valign="top">integer: padding around thumbnail container, default: 0</td></tr>
+	<tr><td align="left" valign="top">thumbMargin</td><td align="left" valign="top">integer: margin next to (and below-for thumbs in a grid) thumbnail, default: 4</td></tr>
+	<tr><td align="left" valign="top">thumbBorderWidth</td><td align="left" valign="top">integer: border width for thumbnail container, default: 1</td></tr>
+	<tr><td align="left" valign="top">thumbImageWidth</td><td align="left" valign="top">integer: used to specify width for all thumbnails, default: -1</td></tr>
+	<tr><td align="left" valign="top">thumbImageHeight</td><td align="left" valign="top">// integer: used to specify height for all thumbnails, default: -1</td></tr>
+	<tr><td align="left" valign="top">thumbScrollButtonWidth</td><td align="left" valign="top">default: 25,, </td></tr>
+	<tr><td align="left" valign="top">forceImageReload</td><td align="left" valign="top">boolean: true to reload all images, default: true</td></tr>
+	<tr><td align="left" valign="top">forceDemandReload</td><td align="left" valign="top">boolean: force reload of ajax content, default: true</td></tr>
+	<tr><td align="left" valign="top">forceDemandReloadParam</td><td align="left" valign="top">string: param used to force reload of ajax content, default: '_jqcg_'</td></tr>
+	<tr><td align="left" valign="top">htmlHome</td><td align="left" valign="top">string: HTML to use to bring the user back home from a slideshow, default: 'All Galleries'</td></tr>
+	<tr><td align="left" valign="top">homeToolTip</td><td align="left" valign="top">string: for gallery home text (see also htmlHome option), default: 'return to all galleries'</td></tr>
+	<tr><td align="left" valign="top">galleryTooltip</td><td align="left" valign="top">string: for gallery items, or use data-gallery-tooltip attribute in gallery item li element, default: ''</td></tr>
+	<tr><td align="left" valign="top">playToolTip</td><td align="left" valign="top">string: for the play button, default: 'start the slideshow'</td></tr>
+	<tr><td align="left" valign="top">pauseToolTip</td><td align="left" valign="top">string: for the pause button, default: 'pause the slideshow'</td></tr>
+	<tr><td align="left" valign="top">prevGalleryToolTip</td><td align="left" valign="top">string: for the previous gallery button, default: 'open the previous gallery'</td></tr>
+	<tr><td align="left" valign="top">nextGalleryToolTip</td><td align="left" valign="top">string: for next gallery button, default: 'open the next gallery'</td></tr>
+	<tr><td align="left" valign="top">nextSlideToolTip</td><td align="left" valign="top">string: for next slide button, default: 'next slide'</td></tr>
+	<tr><td align="left" valign="top">prevSlideToolTip</td><td align="left" valign="top">string: for previous slide button, default: 'previous slide'</td></tr>
+	<tr><td align="left" valign="top">rewindToolTip</td><td align="left" valign="top">string: for first slide button, default: 'first slide'</td></tr>
+	<tr><td align="left" valign="top">fnGalleryClick</td><td align="left" valign="top">function: do your own thing when a gallery item is clicked. Return false to not open the gallery, default: null</td></tr>
+	<tr><td align="left" valign="top">keyboardInput</td><td align="left" valign="top">boolean: listen for keyboard input, default: true</td></tr>
+	<tr><td align="left" valign="top">debug</td><td align="left" valign="top">boolean: true to send debug info to the console, default: false</td></tr>
+	</table>
+		
+		<div class="clear" style="margin-bottom:1em;"></div>
+		
+		<p>Here's an example of calling the plugin from $(document).ready():</p>
+		
+<pre style='color:#d1d1d1;background:#000000;'>$<span style='color:#d2cd86; '>(</span>document<span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>.</span>ready <span style='color:#d2cd86; '>(</span><span style='color:#e66170; font-weight:bold; '>function</span> <span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+    $<span style='color:#d2cd86; '>(</span><span style='color:#00c4c4; '>'#gallery'</span><span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>.</span>jqCoolGallery <span style='color:#d2cd86; '>(</span><span style='color:#b060b0; '>{</span>
+        galleryTileWidth<span style='color:#b060b0; '>:</span> <span style='color:#008c00; '>216</span><span style='color:#d2cd86; '>,</span>                            <span style='color:#9999a9; '>// width of gallery tiles</span>
+        galleryTileHeight<span style='color:#b060b0; '>:</span> <span style='color:#008c00; '>150</span><span style='color:#d2cd86; '>,</span>                            <span style='color:#9999a9; '>// height of gallery tiles</span>
+        galleryColumnCount<span style='color:#b060b0; '>:</span> <span style='color:#008c00; '>4</span><span style='color:#d2cd86; '>,</span>                            <span style='color:#9999a9; '>// eliminates right margin in last column</span>
+        galleryTooltip<span style='color:#b060b0; '>:</span> <span style='color:#00c4c4; '>'Click To Open This Gallery'</span><span style='color:#d2cd86; '>,</span>    <span style='color:#9999a9; '>// tooltip for gallery tiles</span>
+        imageAreaWidth<span style='color:#b060b0; '>:</span> <span style='color:#008c00; '>675</span><span style='color:#d2cd86; '>,</span>                            <span style='color:#9999a9; '>// width of image area</span>
+        imageAreaHeight<span style='color:#b060b0; '>:</span> <span style='color:#008c00; '>450</span><span style='color:#d2cd86; '>,</span>                            <span style='color:#9999a9; '>// height of image area</span>
+        imageAreaPadding<span style='color:#b060b0; '>:</span> <span style='color:#00c4c4; '>'0 15px 0 0'</span><span style='color:#d2cd86; '>,</span>                    <span style='color:#9999a9; '>// padding between image area and panel</span>
+        panelAreaWidth<span style='color:#b060b0; '>:</span> <span style='color:#008c00; '>240</span><span style='color:#d2cd86; '>,</span>                            <span style='color:#9999a9; '>// panel area width</span>
+        thumbWidth<span style='color:#b060b0; '>:</span> <span style='color:#008c00; '>50</span><span style='color:#d2cd86; '>,</span>                                    <span style='color:#9999a9; '>// thumb width</span>
+        thumbHeight<span style='color:#b060b0; '>:</span> <span style='color:#008c00; '>50</span><span style='color:#d2cd86; '>,</span>                                <span style='color:#9999a9; '>// thumb height</span>
+        thumbStyle<span style='color:#b060b0; '>:</span><span style='color:#00c4c4; '>'list'</span><span style='color:#d2cd86; '>,</span>                                <span style='color:#9999a9; '>// list style thumbnails</span>
+        thumbLocation<span style='color:#b060b0; '>:</span><span style='color:#00c4c4; '>'top'</span><span style='color:#d2cd86; '>,</span>                            <span style='color:#9999a9; '>// put thumbnails on top of slideshows</span>
+        debug<span style='color:#b060b0; '>:</span> <span style='color:#0f4d75; '>true</span>                                        <span style='color:#9999a9; '>// sends debug messages to console</span>
+    <span style='color:#b060b0; '>}</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>    
+<span style='color:#b060b0; '>}</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+</pre>
+		
+		<h2>Step 3: Add the jqCoolGallery HTML Markup</h2>
+		
+		<h3>Notes:</h2>
+		<ul class="std-list">
+			<li>Put all the required jqCoolGallery markup inside its own &lt;div&gt; element.</li>
+			<li>It is highly recommended to use the width and height attributes for all images.</li>
+			<li>The prefered method for using jqCoolGallery for displaying a gallery of slideshows is to demand-load each slideshow.</li>
+			<li>Please see the demo pages for more examples.</li>
+		</ul>
+		
+		<h3>Basic Setup - Demand Loaded</h3>
+		
+		<p>The first item should be an unordered list, which specifies each of 
+		the slideshows in the gallery. In this example, we will be demand-loading the images for each gallery 
+		using the <em>rel</em> attribute (see explanation below). Also, we are setting the CSS opacity for the list to be 0 to achieve
+		the fade-in effect after the gallery loads.</p>
+<!--
+<div id="gallery">
+	<ul class="jqcg-gallery" style="opacity:0;">
+		<li data-title="Gallery 1" data-desc="This Is An Amazing Slideshow!" rel="demo/galleries/gallery1.html">
+			<img src="demo/galleries/gallery2/_thumb.jpg" alt="" />
+		</li>
+	</ul>
+</div>
+-->
+<pre style='color:#d1d1d1;background:#000000; overflow-x:scroll;'><span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>div</span> id<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>gallery</span><span style='color:#00c4c4; '>"</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>ul</span> class<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>jqcg-gallery</span><span style='color:#00c4c4; '>"</span> style<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>opacity:0;</span><span style='color:#00c4c4; '>"</span><span style='color:#ff8906; '>></span>
+        <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>li</span> data-title<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>Gallery 1</span><span style='color:#00c4c4; '>"</span> data-desc<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>This Is An Amazing Slideshow!</span><span style='color:#00c4c4; '>"</span> rel<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>demo/galleries/gallery1.html</span><span style='color:#00c4c4; '>"</span><span style='color:#ff8906; '>></span>
+            <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>img</span> src<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>demo/galleries/gallery2/_thumb.jpg</span><span style='color:#00c4c4; '>"</span> alt<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>"</span> <span style='color:#ff8906; '>/></span>
+        <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>li</span><span style='color:#fb8400; '>></span>
+    <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>ul</span><span style='color:#fb8400; '>></span>
+<span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>div</span><span style='color:#fb8400; '>></span>
+</pre>
+		<h3>Demand Loading Content</h3>
+		
+		<p>The <em>rel</em> attribute specifies the URL that will supply the images as an HTML unordered list and 
+		will be pulled in using the jQuery.ajax() method. The following example 
+		shows the expected HTML markup that should be returned: (this is an unordered list with two images)</p>
+		
+<pre style='color:#d1d1d1;background:#000000; overflow-x:scroll;'><span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>ul</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>li</span><span style='color:#ff8906; '>></span>
+        <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>img</span> src<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"demo/galleries/gallery1/5633.jpg"</span> width<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"300"</span> height<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"450"</span> data-thumb<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"demo/galleries/gallery1/5633_thumb.jpg"</span> alt<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>""</span> <span style='color:#ff8906; '>/></span>
+        <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>div</span> class<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"caption"</span><span style='color:#ff8906; '>></span>This is the caption for the first image<span style='color:#00a800; '>.</span><span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>div</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>li</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>li</span><span style='color:#ff8906; '>></span>
+        <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>img</span> src<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"demo/galleries/gallery1/5656.jpg"</span> width<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"300"</span> height<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"450"</span> data-thumb<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"demo/galleries/gallery1/5656_thumb.jpg"</span> alt<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>""</span> <span style='color:#ff8906; '>/></span>
+        <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>div</span> class<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"caption"</span><span style='color:#ff8906; '>></span>This is the caption for the second image<span style='color:#00a800; '>.</span><span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>div</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>li</span><span style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>ul</span><span style='color:#ff8906; '>></span>
+</pre>
+
+		<ul class="std-list">
+			<li>If the <em>data-thumb</em> attribute is not present, the full sized image will be used for the 
+			thumbnail instead. When possible you should use a smaller version of the image for a thumbnail because it will 
+			display better.</li>
+			<li>To specify the width/height of thumbnails, you can either include <em>data-thumb-width</em> and 
+				<em>data-thumb-height</em> attributes in the &lt;img&gt; tag, or specify thumbWidth and thumbHeight options
+				when creating the plugin.</li>
+			<li>Captions are not required.</li>
+		</ul>
+		
+		<h3>Gallery Tile Captions</h3>
+		
+		<p>Gallery tile captions are constructed from the <em>data-title</em> and <em>data-desc</em> attributes 
+		of the &lt;li&gt; element. However, you may format your own gallery tiles captions by adding a 
+		div with the <em>caption</em> class as follows:</p>
+<!-- 
+<div id="gallery">
+	<ul class="jqcg-gallery" style="opacity:0;">
+		<li data-title="Gallery 1" data-desc="This Is An Amazing Slideshow!" rel="demo/galleries/gallery1.html">
+			<img src="demo/galleries/gallery2/_thumb.jpg" alt="" />
+			<div class="caption">
+				<strong>Gallery 1</strong><br />
+				You will love this one!
+			</div>
+		</li>
+	</ul>
+</div>
+-->
+<pre style='color:#d1d1d1;background:#000000; overflow-x:scroll;'><span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>div</span> id<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>gallery</span><span style='color:#00c4c4; '>"</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>ul</span> class<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>jqcg-gallery</span><span style='color:#00c4c4; '>"</span> style<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>opacity:0;</span><span style='color:#00c4c4; '>"</span><span style='color:#ff8906; '>></span>
+        <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>li</span> data-title<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>Gallery 1</span><span style='color:#00c4c4; '>"</span> data-desc<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>This Is An Amazing Slideshow!</span><span style='color:#00c4c4; '>"</span> rel<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>demo/galleries/gallery1.html</span><span style='color:#00c4c4; '>"</span><span style='color:#ff8906; '>></span>
+            <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>img</span> src<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>demo/galleries/gallery2/_thumb.jpg</span><span style='color:#00c4c4; '>"</span> alt<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>"</span> <span style='color:#ff8906; '>/></span>
+            <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>div</span> class<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"</span><span style='color:#00c4c4; '>caption</span><span style='color:#00c4c4; '>"</span><span style='color:#ff8906; '>></span>
+                <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>strong</span><span style='color:#ff8906; '>></span>Gallery 1<span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>strong</span><span style='color:#fb8400; '>></span><span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>br</span> <span style='color:#ff8906; '>/></span>
+                You will love this one!
+            <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>div</span><span style='color:#fb8400; '>></span>
+        <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>li</span><span style='color:#fb8400; '>></span>
+    <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>ul</span><span style='color:#fb8400; '>></span>
+<span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>div</span><span style='color:#fb8400; '>></span>
+</pre>
+	
+	</div>
+	
+	<div id="footer">
+		<div id="footer-left">
+			<div id="credits"><a href="http://www.redtopia.com" target="_blank" title="Visit Our Web Site!">Redtopia, LLC</a></div>
+		</div>
+		<div id="footer-right">
+			<div id="copyright"><p>&copy; Copyright 2011-2012, Redtopia, LLC. All rights reserved.</p></div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

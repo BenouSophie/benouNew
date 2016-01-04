@@ -1,3 +1,7 @@
+ben_calendar:
+    resource: "@BenCalendarBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ben_tchat:
     resource: "@BenTchatBundle/Resources/config/routing.yml"
     prefix:   /

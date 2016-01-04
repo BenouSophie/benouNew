@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Ben\NewsBundle\BenNewsBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Ben\TchatBundle\BenTchatBundle(),
+            new Ben\CalendarBundle\BenCalendarBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

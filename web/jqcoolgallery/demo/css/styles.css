@@ -1,0 +1,79 @@
+body {
+	margin:0 0 20px 0;
+	font-family:Century Gothic,Verdana,sans-serif; 
+	color:#fff;
+	font-size:13px; 
+	line-height:17px; 
+	text-align:center; 
+	background-color:#111214;
+}
+
+#container 			{width:970px; padding:0; margin:0 auto;}
+
+#header {
+	position:relative;
+	float:left; 
+	width:970px; 
+	height:80px; 
+	text-align:left; 
+	margin-bottom:20px; 
+	border-bottom:1px solid #333;
+}
+
+#logo				{position:absolute; margin:7px 0 10px 0; font-size:2.1em; font-weight:bold; color:#E2DE4F; width:500px;}
+#logo a				{font-weight:normal;}
+#logo span			{color:#59bfec; font-size:0.5em; font-weight:normal;}
+#tagline			{position:absolute; margin:40px 0 0 0; width:500px; font-size:1em; font-style:italic;}
+#header-donate		{position:absolute; top:20px; right:0; text-align:right;}
+#header-donate form {display:inline; margin:0; padding:0;}
+#header-desc 		{position:absolute; color:#eee !important; margin:15px 0 0 0;}
+#header-menu 		{position:absolute; margin:56px 0 0 370px; width:600px; height:22px; text-align:right;}
+#header-menu-items 	{float:right;}
+#nav				{list-style:none; margin:0; padding:0;}
+#nav li				{display:inline; padding:2px 8px;}
+
+#page 				{float:left; width:970px; text-align:left;}
+
+h1					{font-size:1.5em; line-height:1.2em; margin:0 0 1em;}
+h2					{font-size:1.2em; line-height:1.1em; margin:0 0 1.1em;}
+h2					{font-size:1.2em; line-height:1em; margin:0 0 1.1em;}
+p					{margin:0 0 1em; padding:0;}
+a					{color:#59bfec; text-decoration:none;}
+a:focus				{color:#59bfec; text-decoration:none;}
+a:link				{color:#59bfec; text-decoration:none;}
+a:active			{color:#59bfec; text-decoration:none;}
+a:visited			{color:#59bfec; text-decoration:none;}
+a:hover				{color:#59bfec; text-decoration:underline;}
+
+#footer {
+	clear:left; 
+	float:left; 
+	width:970px; 
+	padding:10px 0 40px 0; 
+	text-align:left; 
+	margin-top:20px; 
+	color:#fff !important; 
+	font-size:0.9em; 
+	line-height:1em;
+	border-top:1px solid #333;
+}
+
+#footer-left 		{position:absolute; width:400px;}
+#footer-right 		{position:absolute; width:400px; margin-left:570px; text-align:right;}
+
+#credits			{clear:left; margin-bottom:1.2em;}
+#copyright 			{}
+
+.std-list {}
+.std-list li {margin-bottom:0.5em;}
+
+.clear 				{clear:both;}
+
+/* syntax highlighting */
+.code, .source {
+	color:#000;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+}
+.highlight {margin-bottom:1em;}

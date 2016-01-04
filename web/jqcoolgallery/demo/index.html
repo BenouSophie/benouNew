@@ -1,0 +1,261 @@
+<!DOCTYPE html />
+<html>
+<head>
+	<title>jqCoolGallery: Demo</title>
+	
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	
+	<meta name="copyright" content="(c)Copyright 2011-2012, Redtopia, LLC. All rights reserved.">
+	<meta name='description' content='An easy to use, open-source jQuery plugin that displays really cool slideshows and photo galleries.'>
+	<meta name='keywords' content='jquery, plugin, image, slideshow, slide show, gallery, image gallery, photo, photo gallery, ajax, easy, easy to use, simple'>
+	
+	<!-- jquery -->
+	<script type='text/javascript' src='js/jquery-1.7.2.min.js'></script>
+	
+	<!-- jqcoolgallery -->
+	<script type='text/javascript' src='../jquery.jqcoolgallery.1.8.min.js'></script>
+	<link type="text/css" href="../jquery.jqcoolgallery.1.8.min.css" rel="stylesheet" />
+	
+	<!-- styles -->
+	<link type="text/css" href="css/styles.css" rel="stylesheet">
+	
+	<style>
+	#gallery {float:left; background-color:#000; padding:20px 20px 0 20px; width:930px;}
+	
+	/* jqcoolgallery overrides */
+	.jqcg-gallery-item 			{margin-right:22px; margin-bottom:20px;} 	/* apply proper margin around gallery items */
+	.jqcg-viewer 				{padding-bottom:20px;} 						/* apply padding at the bottom of the slide show area */
+	.jqcg-viewer-text-panel 	{height:100px;} 							/* apply height to the caption area in the panel */
+	</style>
+	
+	<script type="text/javascript">
+	$(document).ready (function () {
+		
+		$('#gallery').jqCoolGallery ({
+			galleryTileWidth: 216,				// width of gallery tiles
+			galleryTileHeight: 150,				// height of gallery tiles
+			galleryColumnCount: 4,				// eliminates right margin in last column
+			imageAreaWidth: 675,				// width of image area
+			imageAreaHeight: 450,				// height of image area
+			imageAreaPadding: '0 15px 0 0',		// padding between image area and panel
+			panelAreaWidth: 240,				// panel area width
+			thumbStyle: 'grid',					// grid style thumbnails
+			thumbWidth: 50,						// width of thumbnails
+			thumbHeight: 50,					// height of thumbnails
+			thumbHelperMaxWidth: 110,			// max width of thumbnail helper
+			thumbHelperMaxHeight: 110,			// max height of thumbnail helper
+			debug:true							// send debug messages to js console
+		});
+	});
+	</script>
+</head>
+<body>
+<div id="container">
+
+	<div id="header">
+		<div id="header-desc">
+			<div id="logo">jqCoolGallery <a href="versions.html" title="Version Information"><span>Current Version: 1.8.0</span></a></div>
+			<div id="tagline">An Open-Source jQuery Plugin That Displays Photo Galleries And Slideshows</div>
+		</div>
+		<div id="header-donate">
+			<!-- begin paypal -->
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="659X7Q4PA5RSL">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+			<!-- end paypal -->
+		</div>
+		<div id="header-menu">
+			<div id="header-menu-items">
+				<ul id="nav">
+					<li><a href="http://www.jqcoolgallery.com" target="_blank">Home</a></li>
+					<li><strong>Demo</strong></li>
+					<li><a href="usage.html">Usage</a></li>
+					<li><a href="license.html">License</a></li>
+					<li><a href="support.html">Support</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div id="page">
+		
+		<!-- BEGIN jqcoolgallery markup -->
+		<div id="gallery" class="demo"> 
+			<ul class="jqcg-gallery" style="opacity:0;">
+				<li data-title="Gallery 1" data-desc="Caption for Gallery 1">
+					<img src="images/demo/galleries/gallery1/_thumb.jpg" data-desc="Gallery 1" alt="" />
+					<ul class="jqcg-viewer-slides">
+						<li>
+							<img src="images/demo/galleries/gallery1/5633.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery1/5633_thumb.jpg" alt="Photo 1" />
+							<div class="caption">This is the description for <strong>photo 1</strong>.</div>
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery1/5656.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery1/5656_thumb.jpg" alt="Photo 2" />
+							<div class="caption">This is the description for <strong>photo 2</strong>.</div>
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery1/5676.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery1/5676_thumb.jpg" alt="Photo 3" />
+							<div class="caption">This is the description for <strong>photo 3</strong>.</div>
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery1/5683.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery1/5683_thumb.jpg" alt="Photo 4" />
+							<div class="caption">This is the description for <strong>photo 4</strong>.</div>
+						</li>
+					</ul>
+				</li>
+				<li data-title="Gallery 2" data-desc="Caption for Gallery 2">
+					<img src="images/demo/galleries/gallery2/_thumb.jpg" alt="" />
+					<ul class="jqcg-viewer-slides">
+						<li>
+							<img src="images/demo/galleries/gallery2/6429.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery2/6429_thumb.jpg" alt="" />
+							<div class="caption">This is the description for <strong>photo 1</strong>.</div>
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery2/6507.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery2/6507_thumb.jpg" alt="" />
+							<div class="caption">This is the description for <strong>photo 2</strong>.</div>
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery2/6673.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery2/6673_thumb.jpg" alt="" />
+							<div class="caption">This is the description for <strong>photo 3</strong>.</div>
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery2/6686.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery2/6686_thumb.jpg" alt="" />
+							<div class="caption">This is the description for <strong>photo 4</strong>.</div>
+						</li>
+					</ul>
+				</li>
+				<li data-title="Gallery 3" data-desc="Caption for Gallery 3">
+					<img src="images/demo/galleries/gallery3/_thumb.jpg" alt="" />
+					<ul class="jqcg-viewer-slides">
+						<li>
+							<img src="images/demo/galleries/gallery3/0010.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery3/0010_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery3/0016.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery3/0016_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery3/0027.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery3/0027_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery3/0051.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery3/0051_thumb.jpg" alt="" />
+						</li>
+					</ul>
+				</li>
+				<li data-title="Gallery 4" data-desc="Caption for Gallery 4">
+					<img src="images/demo/galleries/gallery4/_thumb.jpg" alt="" />
+					<ul class="jqcg-viewer-slides">
+						<li>
+							<img src="images/demo/galleries/gallery4/5213.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery4/5213_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery4/5299.jpg" width="374" height="450" data-thumb="images/demo/galleries/gallery4/5299_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery4/5327.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery4/5327_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery4/5370.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery4/5370_thumb.jpg" alt="" />
+						</li>
+					</ul>
+				</li>
+				
+				<li data-title="Gallery 5" data-desc="This is the fifth gallery">
+					<img src="images/demo/galleries/gallery5/_thumb.jpg" alt="" />
+					<div class="caption"><p><strong>Gallery 5</strong></p><p>Add <em>formatting</em> to captions.</p></div>
+					<ul class="jqcg-viewer-slides">
+						<li>
+							<img src="images/demo/galleries/gallery5/1310.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery5/1310_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery5/1330.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery5/1330_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery5/1335.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery5/1335_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery5/1365.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery5/1365_thumb.jpg" alt="" />
+						</li>
+					</ul>
+				</li>
+				
+				<li data-title="Gallery 6" data-desc="This is the sixth gallery">
+					<img src="images/demo/galleries/gallery6/_thumb.jpg" alt="" />
+					<div class="caption"><p><strong>Gallery 6</strong></p><p>Add <strong>formatting</strong> to captions.</p></div>
+					<ul class="jqcg-viewer-slides">
+						<li>
+							<img src="images/demo/galleries/gallery6/3947.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery6/3947_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery6/3949.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery6/3949_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery6/3950.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery6/3950_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery6/3951.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery6/3951_thumb.jpg" alt="" />
+						</li>
+					</ul>
+				</li>
+				
+				<li data-title="Gallery 7" data-desc="This is the seventh gallery">
+					<img src="images/demo/galleries/gallery7/_thumb.jpg" alt="" />
+					<div class="caption"><p><strong>Gallery 7</strong></p><p>Add <a href="#">links</a> to captions.</p></div>
+					<ul class="jqcg-viewer-slides">
+						<li>
+							<img src="images/demo/galleries/gallery7/5207.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery7/5207_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery7/5216.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery7/5216_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery7/5227.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery7/5227_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery7/5247.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery7/5247_thumb.jpg" alt="" />
+						</li>
+					</ul>
+				</li>
+				
+				<li data-title="Gallery 8" data-desc="This is the eigth gallery">
+					<img src="images/demo/galleries/gallery8/_thumb.jpg" alt="" />
+					<div class="caption"><p><strong>Gallery 8</strong></p><p>Add <u>formatting</u> to captions.</p></div>
+					<ul class="jqcg-viewer-slides">
+						<li>
+							<img src="images/demo/galleries/gallery8/1199.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery8/1199_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery8/1209.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery8/1209_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery8/1216.jpg" width="300" height="450" data-thumb="images/demo/galleries/gallery8/1216_thumb.jpg" alt="" />
+						</li>
+						<li>
+							<img src="images/demo/galleries/gallery8/1224.jpg" width="675" height="450" data-thumb="images/demo/galleries/gallery8/1224_thumb.jpg" alt="" />
+						</li>
+					</ul>		
+				</li>
+				
+			</ul>
+		</div>
+		<!-- END jqcoolgallery markup -->
+		
+	</div>
+	
+	<div id="footer">
+		<div id="footer-left">
+			<div id="credits"><a href="http://www.redtopia.com" target="_blank" title="Visit Our Web Site!">Redtopia, LLC</a></div>
+		</div>
+		<div id="footer-right">
+			<div id="copyright"><p>&copy; Copyright 2011-2012, Redtopia, LLC. All rights reserved.</p></div>
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>
