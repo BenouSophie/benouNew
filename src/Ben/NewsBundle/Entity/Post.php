@@ -44,9 +44,8 @@ class Post
 
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="user",type="string")
+     * @ORM\ManyToOne(targetEntity="Ben\CircleOfTrustBundle\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 
@@ -161,4 +160,5 @@ class Post
     {
         return $this->user;
     }
+
 }

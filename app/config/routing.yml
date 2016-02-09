@@ -41,3 +41,31 @@ fos_user_change_password:
 
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+
+# USER BUNDLE
+BlogTest_user:
+    resource: "@BenCircleOfTrustBundle/Resources/config/routing.yml"
+
+# SONATA ADMIN BUNDLE
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix:   /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix:   /admin
+
+sonata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix:   /admin
+
+sonata_user_impersonating:
+    pattern:  /
+    defaults: { _controller: SonataPageBundle:Page:catchAll }
